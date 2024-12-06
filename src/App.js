@@ -18,6 +18,7 @@ function App() {
           <Route path="/about" element={<About />} />
           {/* Add other routes as needed */}
         </Routes>
+        <img src={logo} alt="logo" />
       </div>
     </Router>
   );
