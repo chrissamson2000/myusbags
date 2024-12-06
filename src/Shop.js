@@ -1,31 +1,32 @@
 import React from 'react';
-import { Grid, Button, Typography, Grid2 } from '@mui/material';
+import { Grid, Button, Typography } from '@mui/material';
 import { Card } from 'antd';
 import { Link } from 'react-router-dom';
 
-function HomePage() {
+function ShopPage() {
   return (
     <div style={{ padding: '20px' }}>
       <Typography variant="h4" align="center" gutterBottom>
-        Welcome to Our Store
+        Shop Our Collection
       </Typography>
-      <Grid2 container spacing={2} justifyContent="center">
-        <Grid2 item xs={12} sm={6} md={4}>
+      <Grid container spacing={2} justifyContent="center">
+        {/* Repeat this block for each product */}
+        <Grid item xs={12} sm={6} md={4}>
           <Card
             hoverable
             cover={<img alt="product" src="product-image.jpg" />}
           >
-            <Card.Meta title="Stylish Handbag" description="Perfect for any occasion" />
-            <Link to="/shop">
+            <Card.Meta title="Stylish Handbag" description="$129.99" />
+            <Link to="/product-details">
               <Button type="primary" style={{ marginTop: '10px' }} block>
                 View Product
               </Button>
             </Link>
           </Card>
-        </Grid2>
-      </Grid2>
+        </Grid>
+      </Grid>
     </div>
   );
 }
 
-export default HomePage;
+export default ShopPage;

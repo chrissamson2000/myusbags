@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Home'; // Import Home component
-import About from './About'; // Import About component
-import Navigation from './Navigation'; // Import Navigation component
+import React from 'react';
+import { Container, Typography } from '@mui/material';
+import { Button } from 'antd';  // Ant Design button
+import Navigation from './Navigation'; // Navigation Component
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // React Router
 
+import HomePage from './Home'; // Import Home
+import AboutPage from './About'; // Import About
+import CartPage from './Cart'; // Import Cart
+import ShopPage from './Shop'; // Import Shop
 
 function App() {
   return (
     <Router>
       <div className="App">
-        {/* Navigation Links */}
         <Navigation />
-
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          {/* Add other routes as needed */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/shop" element={<ShopPage />} />
         </Routes>
-        <img src={logo} alt="logo" />
+
+        <Container>
+          <Typography variant="h3" gutterBottom align="center">
+            Welcome to My E-Commerce Store
+          </Typography>
+          <Typography variant="h6" paragraph align="center">
+            Explore the latest fashion and accessories.
+          </Typography>
+          <Button type="primary" size="large" block>
+            Start Shopping
+          </Button>
+        </Container>
       </div>
     </Router>
   );
