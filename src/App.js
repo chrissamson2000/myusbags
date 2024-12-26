@@ -20,6 +20,10 @@ function App() {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/shop" element={<ShopPage />} />
         </Routes>
+        <div>
+          <title>Testing out this function.</title>
+          <h1>Hello Chris</h1>
+        </div>
 
         <Container>
           <Typography variant="h3" gutterBottom align="center">
